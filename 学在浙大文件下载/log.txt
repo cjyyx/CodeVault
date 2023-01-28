@@ -1,0 +1,12 @@
+lec1_yusong(3).pdf	https://tcmedia.zju.edu.cn/download/file/2205018370fdd22e046881990f466eae6194a80e?timestamp=1667998800&token=78ff0b52b9d895c06c12d6b4e19ca456&name=lec1_yusong%283%29.pdf
+Lec1-ExpFoundations.pdf	https://tcmedia.zju.edu.cn/download/file/312f76ff41b4c0a2e69860ed5d1726042ef1cde8?timestamp=1667998800&token=14abed8a4a33854cff901e6f55c70dfd&name=Lec1-ExpFoundations.pdf
+HW1.pdf	https://tcmedia.zju.edu.cn/download/file/c3e4922c7400837517233b2b5317666495f789c1?timestamp=1667998800&token=81b3869edf0c3334f43a43d981316528&name=HW1.pdf
+HW1_solution.pdf	https://tcmedia.zju.edu.cn/download/file/7e54559e61656f7872cf789a789b6098bc67cab6?timestamp=1667998800&token=1c047566e8d276fc764d9a5bb5f857f1&name=HW1_solution.pdf
+lec2_yusong(1).pdf	https://tcmedia.zju.edu.cn/download/file/2feda8ab7592934c9d9488f9fcbca309623040a3?timestamp=1667998800&token=bf177574affccb1eaac1a256b8bce168&name=lec2_yusong%281%29.pdf
+HW2.pdf	https://tcmedia.zju.edu.cn/download/file/c10adac61c6b399776c8250fc7449ef1e7bf84d7?timestamp=1667998800&token=d2edc01fee7870985cd224f7cebd4f0d&name=HW2.pdf
+HW2_solution.pdf	https://tcmedia.zju.edu.cn/download/file/889f1df532855f4128f39d5d01e103e6c0adee3a?timestamp=1667998800&token=9d3d3997642ef0ace4b795e183abdc94&name=HW2_solution.pdf
+lec3_yusong.pdf	https://tcmedia.zju.edu.cn/download/file/97b5b791b35bf0af6413bfe5ff617765c5f34393?timestamp=1667998800&token=56147d1885b374d9817ddece38086e19&name=lec3_yusong.pdf
+HW3.pdf	https://tcmedia.zju.edu.cn/download/file/62d72b3dd3a4eb083c3207c6442ec15f8451acb7?timestamp=1667998800&token=268e8670a7bdb17ddd0871b55dd68d0d&name=HW3.pdf
+HW3_solution.pdf	https://tcmedia.zju.edu.cn/download/file/d6eb535a711039ead81f49411cc2f55d99118ee1?timestamp=1667998800&token=5eaccfd3d5eff02bf7457569f3a5a8e8&name=HW3_solution.pdf
+lec4_yusong(1).pdf	https://tcmedia.zju.edu.cn/download/file/459d89020492cb279796e1e6cc3a14b5e4ec32f5?timestamp=1667998800&token=3b60145f86a0a97fb9eb481521547184&name=lec4_yusong%281%29.pdf
+HW4.pdf	https://tcmedia.zju.edu.cn/download/file/8c757e15d71fa2a35dfffb687d1e1e156583404e?timestamp=1667998800&token=815f4648d50a4ee48934520270f3904d&name=HW4.pdf
