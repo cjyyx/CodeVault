@@ -1,2 +1,2 @@
-python -u "D:\MyRunProject\Github\Scripts\TPLinkXDR3010\main.py"
+python "D:\MyRunProject\Github\Scripts\TPLinkXDR3010\run.py"
 pause

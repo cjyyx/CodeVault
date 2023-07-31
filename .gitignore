@@ -1,0 +1,7 @@
+**/__pycache__/**
+**/build/**
+**/**.egg-info/**
+**/data/**
+**/Backup/**
+TempTest.py
+log.txt

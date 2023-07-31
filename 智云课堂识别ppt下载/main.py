@@ -173,9 +173,9 @@ def img2pdf():
 
 if __name__ == "__main__":
     # download_sub_list(50590)
-    # download_pptimg(
-    #     course_id=46475,
-    #     sub_id=794632,
-    # )
-    # ppt_enhance2()
+    download_pptimg(
+        course_id=51619,
+        sub_id=885147,
+    )
+    ppt_enhance2()
     img2pdf()

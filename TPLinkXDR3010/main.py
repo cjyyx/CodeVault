@@ -1,11 +1,11 @@
 # %%
 
+from utils import log
 import time
 
 import requests
 import win32api
 import win32con
-import win32gui
 
 
 # %%
@@ -55,16 +55,22 @@ if __name__ == "__main__":
     mN = "OPPO-Reno-Z"
 
     while 1:
-        hnl = getHostNameList()
-        print(hnl)
+        try:
+            hnl = getHostNameList()
 
-        if miH:
-            if mN not in hnl:
-                miH = False
-                alart("m leave home!!!")
-        elif not miH:
-            if mN in hnl:
-                miH = True
-                alart("m arrive home!!!!!!!!!!!!!!")
+            log.info(f"当前连接设备 {hnl}")
+
+            if miH:
+                if mN not in hnl:
+                    miH = False
+                    alart("m leave home!!!")
+                    log.info("m leave home!!!")
+            elif not miH:
+                if mN in hnl:
+                    miH = True
+                    alart("m arrive home!!!!!!!!!!!!!!")
+                    log.info("m arrive home!!!!!!!!!!!!!!")
+        except Exception as e:
+            log.error(f"发生错误 {e}")
 
         time.sleep(15)
