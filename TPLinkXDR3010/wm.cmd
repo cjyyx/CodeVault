@@ -1,2 +1,2 @@
-python "D:\MyRunProject\Github\Scripts\TPLinkXDR3010\run.py"
+python run.py
 pause

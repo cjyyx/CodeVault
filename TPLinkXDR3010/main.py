@@ -10,12 +10,14 @@ import win32con
 
 # %%
 
+proxies = {"http": None, "https": None}
+
 def getLoginStok() -> str:
     url = "http://tplogin.cn/"
     data = '''
     {"method":"do","login":{"password":"0bcn98KAKlxfbwK"}}
     '''
-    req = requests.post(url, data=data).json()
+    req = requests.post(url, data=data, proxies=proxies).json()
     return req["stok"]
 
 
@@ -24,7 +26,7 @@ def getHostInfoList() -> list:
     data = '''
     {"system":{"name":["sys"]},"hosts_info":{"table":"host_info"},"network":{"name":"iface_mac"},"function":{"name":"new_module_spec"},"method":"get"}
     '''
-    req = requests.post(url, data=data).json()
+    req = requests.post(url, data=data, proxies=proxies).json()
     return req["hosts_info"]["host_info"]
 
 
@@ -63,14 +65,15 @@ if __name__ == "__main__":
             if miH:
                 if mN not in hnl:
                     miH = False
-                    alart("m leave home!!!")
                     log.info("m leave home!!!")
+                    alart("m leave home!!!")
             elif not miH:
                 if mN in hnl:
                     miH = True
-                    alart("m arrive home!!!!!!!!!!!!!!")
                     log.info("m arrive home!!!!!!!!!!!!!!")
+                    alart("m arrive home!!!!!!!!!!!!!!")
         except Exception as e:
             log.error(f"发生错误 {e}")
+            alart(f"发生错误 {e}")
 
         time.sleep(15)
