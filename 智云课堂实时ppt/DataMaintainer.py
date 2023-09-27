@@ -103,7 +103,7 @@ def sub_maintain(course_id, sub_id):
     sub_path = f"{data_path}/{course_id}/{sub_id}"
     if (not os.path.exists(sub_path)):
         print(f"发现新 sub {course_id}/{sub_id}")
-        os.mkdir(sub_path)
+        os.makedirs(sub_path)
     ppt_dir = f"{sub_path}/ppt"
     if (not os.path.exists(ppt_dir)):
         os.mkdir(ppt_dir)
@@ -126,5 +126,14 @@ def sub_maintain(course_id, sub_id):
 
 # %%
 
-for course_id in course_id_list:
-    course_maintain(course_id)
+if __name__ == "__main__":
+
+    # for course_id in course_id_list:
+    #     course_maintain(course_id)
+
+    while 1:
+        sub_maintain(
+            course_id=52993,
+            sub_id=991048
+        )
+        time.sleep(1)
