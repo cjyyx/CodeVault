@@ -131,9 +131,13 @@ if __name__ == "__main__":
     # for course_id in course_id_list:
     #     course_maintain(course_id)
 
-    while 1:
-        sub_maintain(
-            course_id=52993,
-            sub_id=991048
-        )
-        time.sleep(1)
+    # while 1:
+    #     sub_maintain(
+    #         course_id=52993,
+    #         sub_id=991048
+    #     )
+    #     time.sleep(1)
+
+    course_maintain(
+        course_id=54578
+    )

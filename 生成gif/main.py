@@ -19,4 +19,4 @@ images.sort(key=lambda x: int(x.filename.split('.')[1]))
 # %%
 
 # 合成为gif动图并导出
-images[0].save('output.gif', save_all=True, append_images=images[1:], duration=100, loop=0)
+images[0].save('output.gif', save_all=True, append_images=images[1:], duration=50, loop=0)
