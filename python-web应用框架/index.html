@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+<script src="/js/jquery.min.js"></script>
+
+    <title>python app</title>
+
+</head>
+
+<body>
+    <input type="text" style="width: auto;height: auto;">
+
+    <button style="width: 40px;height: 20px;">topy</button>
+
+
+</body>
+<script>
+
+    $("button").click(function() {
+        a=$("input").val();
+        console.log(a);
+        r=topy("print",[a]);
+        console.log(r);
+        
+    });
+</script>
+<script src="/js/init.js"></script>
+<script src="/js/topy.js"></script>
+<script src="/js/tools.js"></script>
+<script src="/js/main.js"></script>
+
+</html>

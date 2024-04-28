@@ -3,5 +3,6 @@
 **/**.egg-info/**
 **/data/**
 **/Backup/**
-TempTest.py
+test.txt
+temp.txt
 log.txt
