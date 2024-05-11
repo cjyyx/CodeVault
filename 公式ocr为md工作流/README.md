@@ -1,3 +1,6 @@
+
+https://github.com/cjyyx/CodeVault/assets/50133699/d2b0a714-41a4-4ede-b0b1-e64291d90e4a
+
 ## 工作流
 
 1. 截图，这里使用QQ自带的功能，快捷键 `Ctrl+Alt+A`
