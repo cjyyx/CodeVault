@@ -10,6 +10,11 @@ https://github.com/KaTeX/KaTeX/blob/main/docs/supported.md
 
 下面是知乎对 KaTeX 的支持结果
 
+$$
+M_{\mathrm{cg}} = \underbrace{M_{\mathrm{f}}}_{\text{机身贡献}} +\underbrace{M_{\mathrm{sc},\mathrm{w}} + L_{\mathrm{w}}x_{\mathrm{a}}}_{\text{机载贡献}} + \underbrace{M_{\mathrm{sc},\mathrm{t}} - L_{\mathrm{t}}l_{\mathrm{t}}}_{\text{平地贡献}}
+$$
+
+
 ## Accents
 
 $a'$ `a'`  
