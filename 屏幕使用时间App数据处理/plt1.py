@@ -8,9 +8,9 @@ import pandas as pd
 from utils import plot_daily_usage_time
 
 # 设置字体为SimHei（黑体）
-matplotlib.rcParams['font.sans-serif'] = ['SimHei'] 
+matplotlib.rcParams["font.sans-serif"] = ["SimHei"]
 # 解决负号显示问题
-matplotlib.rcParams['axes.unicode_minus'] = False
+matplotlib.rcParams["axes.unicode_minus"] = False
 
 # %%
 with open("AppUsage_example.txt", "r", encoding="utf-8") as file:
@@ -46,43 +46,47 @@ for line in lines:
 
 # %%
 
+print("所有应用日均用时数据")
+
 # 提取应用标识为 ALL 的应用使用时间
 data0 = []
 for entry in structured_data:
-    date_obj = entry['date_obj']
-    if 'ALL' in entry['apps']:
-        usage_time = entry['apps']['ALL']['使用时长']/(1000*3600) # 以小时为单位
+    date_obj = entry["date_obj"]
+    if "ALL" in entry["apps"]:
+        usage_time = entry["apps"]["ALL"]["使用时长"] / (1000 * 3600)  # 以小时为单位
         data0.append((date_obj, usage_time))
 
-print("所有应用日均用时数据")
-
 # 创建 DataFrame
-df = pd.DataFrame(data0, columns=['date', 'usage_time'])
-df.set_index('date', inplace=True)
+df = pd.DataFrame(data0, columns=["date", "usage_time"])
+df.set_index("date", inplace=True)
 
 # 按周汇总使用时间
-dfw = df.resample('W').mean()
+dfw = df.resample("W").mean()
 
 plot_daily_usage_time(
     dfw,
     figsize=(10, 5),
     title="日均用时按周变化曲线",
     ylabel="日均用时 (小时)",
+    ylim=(2, 14),
 )
 
 # 按月汇总使用时间
-dfm = df.resample('M').mean()
+dfm = df.resample("M").mean()
 
 plot_daily_usage_time(
     dfm,
     figsize=(10, 5),
     title="日均用时按月变化曲线",
     ylabel="日均用时 (小时)",
+    ylim=(4, 10),
 )
 
 # %%
 
-novel_apps=[
+print("小说类应用日均用时数据")
+
+novel_apps = [
     "com.qidian.QDReader",
     "com.sfacg",
     "com.kuangxiangciweimao.novel",
@@ -93,19 +97,17 @@ novel_apps=[
 
 data_novel = []
 for entry in structured_data:
-    date_obj = entry['date_obj']
+    date_obj = entry["date_obj"]
     usage_time = 0
     for app_id in novel_apps:
-        if app_id in entry['apps']:
-            usage_time += entry['apps'][app_id]['使用时长']/(1000*3600)
+        if app_id in entry["apps"]:
+            usage_time += entry["apps"][app_id]["使用时长"] / (1000 * 3600)
     data_novel.append((date_obj, usage_time))
 
-print("小说类应用日均用时数据")
-
 # 创建 DataFrame
-df = pd.DataFrame(data_novel, columns=['date', 'usage_time'])
-df.set_index('date', inplace=True)
-dfw = df.resample('W').mean()
+df = pd.DataFrame(data_novel, columns=["date", "usage_time"])
+df.set_index("date", inplace=True)
+dfw = df.resample("W").mean()
 plot_daily_usage_time(
     dfw,
     figsize=(10, 5),
@@ -113,7 +115,7 @@ plot_daily_usage_time(
     ylabel="日均用时 (小时)",
 )
 
-dfm = df.resample('M').mean()
+dfm = df.resample("M").mean()
 plot_daily_usage_time(
     dfm,
     figsize=(10, 5),
@@ -123,5 +125,34 @@ plot_daily_usage_time(
 
 # %%
 
+print("除小说类应用外的其他应用日均用时数据")
 
+data_other = []
+for entry in structured_data:
+    date_obj = entry["date_obj"]
+    all_usage_time = entry["apps"]["ALL"]["使用时长"] / (1000 * 3600)
+    novel_usage_time = 0
+    for app_id in novel_apps:
+        if app_id in entry["apps"]:
+            novel_usage_time += entry["apps"][app_id]["使用时长"] / (1000 * 3600)
+    data_other.append((date_obj, all_usage_time - novel_usage_time))
 
+df = pd.DataFrame(data_other, columns=["date", "usage_time"])
+df.set_index("date", inplace=True)
+dfw = df.resample("W").mean()
+plot_daily_usage_time(
+    dfw,
+    figsize=(10, 5),
+    title="除小说类应用外的其他应用日均用时按周变化曲线",
+    ylabel="日均用时 (小时)",
+)
+
+dfm = df.resample("M").mean()
+plot_daily_usage_time(
+    dfm,
+    figsize=(10, 5),
+    title="除小说类应用外的其他应用日均用时按月变化曲线",
+    ylabel="日均用时 (小时)",
+)
+
+# %%
