@@ -1,12 +1,12 @@
 # %%
 
-from utils import log
 import time
 
 import requests
 import win32api
 import win32con
 
+from utils import log
 
 # %%
 
@@ -54,7 +54,7 @@ def alart(text: str):
 
 if __name__ == "__main__":
     miH = False
-    mN = "OPPO-Reno-Z"
+    mN = "OPPO-Reno11-5G"
 
     while 1:
         try:

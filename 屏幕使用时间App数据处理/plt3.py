@@ -87,10 +87,20 @@ for entry in structured_data:
             media_usage_time += entry["apps"][app_id]["使用时长"] / (1000 * 3600)
     else_usage_time = all_usage_time - novel_usage_time - media_usage_time
 
+    novel_usage_rate = novel_usage_time / all_usage_time
+    media_usage_rate = media_usage_time / all_usage_time
+    else_usage_rate = else_usage_time / all_usage_time
+
     data.append(
         (
             date_obj,
-            all_usage_time,novel_usage_time,media_usage_time,else_usage_time,
+            all_usage_time,
+            novel_usage_time,
+            media_usage_time,
+            else_usage_time,
+            novel_usage_rate,
+            media_usage_rate,
+            else_usage_rate,
         )
     )
 
@@ -102,33 +112,46 @@ df = pd.DataFrame(
         "novel_usage_time",
         "media_usage_time",
         "else_usage_time",
+        "novel_usage_rate",
+        "media_usage_rate",
+        "else_usage_rate",
     ],
 )
 df.set_index("date", inplace=True)
 
 # %%
 
-# 计算14日平均值
-df_avg = df.rolling(window=14).mean()
-
-# 绘制图表
-plt.figure(figsize=(12, 6))
-plt.plot(df_avg.index, df_avg["all_usage_time"], label="总使用时间")
-plt.plot(df_avg.index, df_avg["novel_usage_time"], label="小说应用使用时间")
-plt.plot(df_avg.index, df_avg["media_usage_time"], label="社交媒体应用使用时间")
-plt.plot(df_avg.index, df_avg["else_usage_time"], label="其他应用使用时间")
-
-# 设置横坐标为年月，间隔为一个月
-plt.gca().xaxis.set_major_formatter(matplotlib.dates.DateFormatter('%Y-%m'))
-plt.gca().xaxis.set_major_locator(matplotlib.dates.MonthLocator())
-
-plt.xlabel("日期")
-plt.ylabel("14日平均使用时间（小时）")
-plt.title("应用使用时间统计")
-plt.legend()
-
+# plt.figure(figsize=(10, 6))
+plt.scatter(df["novel_usage_time"],df["all_usage_time"], alpha=0.7)
+plt.xlabel("小说应用使用时间 (小时)")
+plt.ylabel("总使用时间 (小时)")
 plt.grid(True)
-plt.tight_layout()
+# plt.axis('equal')  # 设置横纵坐标比例单位相同
+plt.show()
+
+
+# %%
+
+plt.scatter(df["novel_usage_rate"],df["all_usage_time"], alpha=0.7)
+plt.xlabel("小说应用使用时间占比")
+plt.ylabel("总使用时间 (小时)")
+plt.grid(True)
+plt.show()
+
+# %%
+
+plt.scatter(df["media_usage_time"],df["else_usage_time"], alpha=0.7)
+plt.xlabel("社交媒体应用使用时间 (小时)")
+plt.ylabel("其他应用使用时间 (小时)")
+plt.grid(True)
+plt.show()
+
+# %%
+
+plt.scatter(df["media_usage_rate"],df["else_usage_rate"], alpha=0.7)
+plt.xlabel("社交媒体应用使用时间占比")
+plt.ylabel("其他应用使用时间占比")
+plt.grid(True)
 plt.show()
 
 # %%

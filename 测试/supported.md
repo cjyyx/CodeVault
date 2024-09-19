@@ -1,4 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/695235678
+
 # KaTeX 支持测试
 
 来源：
@@ -6,14 +7,35 @@ https://katex.org/docs/supported.html
 
 https://github.com/KaTeX/KaTeX/blob/main/docs/supported.md
 
-在 vscode Markdown Preview Enhanced 插件上，大部分函数都支持。
+在 vscode 上，大部分函数都支持。
 
-下面是知乎对 KaTeX 的支持结果
+下面是测试结果
+
+$v, w, \nu, \omega$
 
 $$
 M_{\mathrm{cg}} = \underbrace{M_{\mathrm{f}}}_{\text{机身贡献}} +\underbrace{M_{\mathrm{sc},\mathrm{w}} + L_{\mathrm{w}}x_{\mathrm{a}}}_{\text{机载贡献}} + \underbrace{M_{\mathrm{sc},\mathrm{t}} - L_{\mathrm{t}}l_{\mathrm{t}}}_{\text{平地贡献}}
 $$
 
+$$
+f(n)=
+\begin{cases}
+\frac{n}{2},&\text{if $n$ is even}\\[5ex]
+3n+1,&\text{if $n$ is odd}
+\end{cases}
+$$
+
+$$
+T\mathrm{cos}\varepsilon - D - W\mathrm{sin}\gamma = \cancel{\frac{W}{g} \frac{\mathrm{d}V}{\mathrm{d}t}}
+$$
+
+$$
+\cancel{T\mathrm{sin}\varepsilon} + L - W\mathrm{cos}\gamma = \cancel{\frac{W}{g} \frac{V^{2}}{R}}
+$$
+
+$$
+u_{\substack{\max\\\min}}=\sqrt{z\pm\sqrt{z^{2}-1}}
+$$
 
 ## Accents
 
@@ -31,7 +53,7 @@ $\widetilde{ac}$ `\widetilde{ac}`
 $\overgroup{AB}$ `\overgroup{AB}`
 
 
-$a^{\prime}$ `a^{\prime}` 
+$a^{\prime}$ `a^{\prime}`
 
 $\utilde{AB}$ `\utilde{AB}`
 
@@ -42,12 +64,12 @@ $\undergroup{AB}$ `\undergroup{AB}`
 
 $\acute{a}$ `\acute{a}`
 
-$\vec{F}$ `\vec{F}` 
+$\vec{F}$ `\vec{F}`
 
 $\Overrightarrow{AB}$ `\Overrightarrow{AB}`
 
 
-$\bar{y}$ `\bar{y}` 
+$\bar{y}$ `\bar{y}`
 
 $\overleftarrow{AB}$ `\overleftarrow{AB}`
 
@@ -56,7 +78,7 @@ $\overrightarrow{AB}$ `\overrightarrow{AB}`
 
 $\breve{a}$ `\breve{a}`
 
-$\underleftarrow{AB}$ `\underleftarrow{AB}` 
+$\underleftarrow{AB}$ `\underleftarrow{AB}`
 
 $\underrightarrow{AB}$ `\underrightarrow{AB}`
 
@@ -68,7 +90,7 @@ $\overleftharpoon{ac}$ `\overleftharpoon{ac}`
 $\overrightharpoon{ac}$ `\overrightharpoon{ac}`
 
 
-$\dot{a}$ `\dot{a}` 
+$\dot{a}$ `\dot{a}`
 
 $\overleftrightarrow{AB}$ `\overleftrightarrow{AB}`  
 
@@ -84,7 +106,7 @@ $\underbrace{AB}$ `\underbrace{AB}`
 
 $\grave{a}$ `\grave{a}`
 
-$\overline{AB}$ `\overline{AB}` 
+$\overline{AB}$ `\overline{AB}`
 
 $\overlinesegment{AB}$ `\overlinesegment{AB}`
 
@@ -111,7 +133,6 @@ $\text{\~{a}}$ `\~{a}`
 $\text{\.{a}}$ `\.{a}`
 
 $\text{\H{a}}$ `\H{a}`
-
 
 $\text{\`{a}}$ <code>\\`{a}</code>
 

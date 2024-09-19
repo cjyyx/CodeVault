@@ -13,7 +13,10 @@ matplotlib.rcParams["font.sans-serif"] = ["SimHei"]
 matplotlib.rcParams["axes.unicode_minus"] = False
 
 # %%
-with open("AppUsage_example.txt", "r", encoding="utf-8") as file:
+
+data_file = "AppUsage/AppUsage_day_2024_9_19_11_12_55.txt"
+
+with open(data_file, "r", encoding="utf-8") as file:
     data = file.read()
 lines = data.strip().split("\n")
 
