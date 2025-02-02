@@ -11,3 +11,6 @@ for _ in range(5):
     ana.point('p2')
     time.sleep(0.1)
     ana.point('p3')
+
+
+ana.final_print()
