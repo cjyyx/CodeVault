@@ -28,7 +28,7 @@ student = 3210103522
 course_id = 71369
 sub_id = 1533509
 
-with open("headers.json", "r", encoding="utf-8") as f:
+with open("myheaders.json", "r", encoding="utf-8") as f:
     headers = json.load(f)
 
 
