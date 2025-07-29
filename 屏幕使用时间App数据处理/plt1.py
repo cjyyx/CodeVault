@@ -14,7 +14,7 @@ matplotlib.rcParams["axes.unicode_minus"] = False
 
 # %%
 
-data_file = "AppUsage/AppUsage_day_2024_9_19_11_12_55.txt"
+data_file = "AppUsage/AppUsage_day_2025_6_2_21_17_20.txt"
 
 with open(data_file, "r", encoding="utf-8") as file:
     data = file.read()

@@ -25,8 +25,8 @@ def security_filename(name: str) -> str:
 # %%
 
 student = 3210103522
-course_id = 71369
-sub_id = 1533509
+course_id = 72197
+sub_id = 1541553
 
 with open("myheaders.json", "r", encoding="utf-8") as f:
     headers = json.load(f)
@@ -110,9 +110,9 @@ def download_pptimg(course_id, sub_id, name="default"):
             f.write(c)
 
 
-# download_pptimg(course_id, sub_id)
-for sub in sub_list:
-    download_pptimg(course_id, sub["sub_id"], sub["sub_title"])
+download_pptimg(course_id, 1541553)
+# for sub in sub_list:
+#     download_pptimg(course_id, sub["sub_id"], sub["sub_title"])
 
 
 # %%
