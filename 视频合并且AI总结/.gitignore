@@ -1,6 +1,13 @@
-*.mp3
-*.txt
+input_recording
+input_video
+results
+tmp
+
+*.log
+
 baidu_key.json
-sample.log
-log
+
 test.py
+
+BBDown.exe
+BBDown.data
