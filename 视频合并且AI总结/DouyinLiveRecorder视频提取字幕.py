@@ -5,10 +5,10 @@ from datetime import datetime
 
 from utils import Log, BOS, audio2text
 
-ffmpeg_path = "C:/Users/cjy/Desktop/DouyinLiveRecorder_v4.0.3/ffmpeg/ffmpeg.exe"
-base_path = "C:/Users/cjy/Desktop/DouyinLiveRecorder_v4.0.3/downloads/B站直播/憨大炒股"
+ffmpeg_path = "C:/Users/cjy/Desktop/Tools/DouyinLiveRecorder_v4.0.3/ffmpeg/ffmpeg.exe"
+base_path = "C:/Users/cjy/Desktop/Tools/DouyinLiveRecorder_v4.0.3/downloads/B站直播/憨大炒股"
 
-video_name = "憨大炒股_2025-08-17_19-06-29"
+video_name = "憨大炒股_2026-04-30_19-03-44"
 
 output_audio = f"results/{video_name}_合并.mp3"
 

@@ -14,7 +14,7 @@ class CodeTimer:
 
     def reset(self) -> None:
         """重置单个时间点的计时起点。不清空已记录的数据。"""
-        self.last_point_time = time.time()
+        self.last_point_time = time.perf_counter()
 
     def clear(self) -> None:
         """清空所有已记录的性能数据。"""
@@ -31,7 +31,7 @@ class CodeTimer:
             # 因为这部分时间的标签是未知的。后续的 point 才有意义。
             return
 
-        current_time = time.time()
+        current_time = time.perf_counter()
         duration = current_time - self.last_point_time
         self.data[label].append(duration)
         self.last_point_time = current_time
@@ -42,7 +42,7 @@ class CodeTimer:
             print("计时器从未使用过 (请使用 'with CodeTimer() as timer:' 模式)。")
             return
 
-        total_wall_time = time.time() - self.start_of_block
+        total_wall_time = time.perf_counter() - self.start_of_block
         print(f"总分析时长 (Wall Time): {total_wall_time:.4f} 秒")
 
         if not self.data:
@@ -73,7 +73,7 @@ class CodeTimer:
 
     def __enter__(self):
         """上下文管理器入口，开始计时。"""
-        self.start_of_block = time.time()
+        self.start_of_block = time.perf_counter()
         self.last_point_time = self.start_of_block  # 将第一个计时的起点设为 with 语句的开始
         return self
 
@@ -84,19 +84,32 @@ class CodeTimer:
 
 # 使用示例
 if __name__ == "__main__":
-    print("--- 使用上下文管理器 ---")
-    with CodeTimer() as timer:
-        time.sleep(0.1)
-        timer.point("数据加载")
+    # print("--- 使用上下文管理器 ---")
+    # with CodeTimer() as timer:
+    #     time.sleep(0.1)
+    #     timer.point("数据加载")
 
-        time.sleep(0.3)
+    #     time.sleep(0.3)
 
-        timer.point("模型预处理")
+    #     timer.point("模型预处理")
 
     print("\n--- 手动使用 ---")
     timer = CodeTimer()
     timer.__enter__()  # 手动模拟进入
     timer.reset()
-    time.sleep(0.2)
-    timer.point("任务A")
+
+    for _ in range(10):
+        timer.point("outside")
+        time.sleep(0.02)
+        timer.point("任务A")
+
+        for _ in range(5):
+            time.sleep(0.01)
+            timer.point("任务B")
+            time.sleep(0.05)
+            timer.point("任务C")
+
+        time.sleep(0.03)
+        timer.point("任务D")
+
     timer.report()  # 手动打印
